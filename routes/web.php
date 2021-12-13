@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RelationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
@@ -47,3 +48,13 @@ Route::prefix('blog')->name('blog.')->group(function() {
 // Route::delete('posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 Route::resource('posts', PostController::class);
+
+
+
+Route::get('one-to-one', [RelationController::class, 'one_to_one']);
+Route::get('one-to-many', [RelationController::class, 'one_to_many']);
+
+// CapitalizeCase
+// UPPERCASE
+// snake_case
+// kebab-case

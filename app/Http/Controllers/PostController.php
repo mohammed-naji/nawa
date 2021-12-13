@@ -45,7 +45,7 @@ class PostController extends Controller
             // 'price' => 'regex:09'
         ]);
 
-        // dd($request->except('_token'));
+        // dd($request->only(['title', 'content']));
 
         $imgname = time() . rand() . $request->file('image')->getClientOriginalName();
         $request->file('image')->move(public_path('uploads'), $imgname);
